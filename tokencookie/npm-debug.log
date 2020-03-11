@@ -1,0 +1,151 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'n' ]
+2 info using npm@2.14.12
+3 info using node@v4.2.6
+4 verbose install initial load of C:\Users\edson.sensato\AppData\Roaming\npm\package.json
+5 verbose readDependencies loading dependencies from C:\Users\edson.sensato\AppData\Roaming\npm\package.json
+6 silly cache add args [ 'n', null ]
+7 verbose cache add spec n
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'n',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'n',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed n@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for n
+11 info addNameTag [ 'n', 'latest' ]
+12 silly mapToRegistry name n
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/n
+16 verbose addNameTag registry:https://registry.npmjs.org/n not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/n
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 22:30:01
+20 verbose request id 118dc626a822d31e
+21 verbose etag W/"98bf5ad216f2fda83f13c8119f201391"
+22 verbose lastModified Tue, 25 Feb 2020 08:29:15 GMT
+23 http request GET https://registry.npmjs.org/n
+24 http 304 https://registry.npmjs.org/n
+25 verbose headers { date: 'Thu, 05 Mar 2020 01:30:01 GMT',
+25 verbose headers   connection: 'keep-alive',
+25 verbose headers   'set-cookie': [ '__cfduid=dbc2f937a3562c184b832b4d5601a26a71583371801; expires=Sat, 04-Apr-20 01:30:01 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+25 verbose headers   'cf-ray': '56f011c20849d050-GRU',
+25 verbose headers   age: '545',
+25 verbose headers   'cache-control': 'public, max-age=300',
+25 verbose headers   etag: '"98bf5ad216f2fda83f13c8119f201391"',
+25 verbose headers   'last-modified': 'Tue, 25 Feb 2020 08:29:15 GMT',
+25 verbose headers   vary: 'Accept-Encoding',
+25 verbose headers   'cf-cache-status': 'HIT',
+25 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+25 verbose headers   server: 'cloudflare' }
+26 silly get cb [ 304,
+26 silly get   { date: 'Thu, 05 Mar 2020 01:30:01 GMT',
+26 silly get     connection: 'keep-alive',
+26 silly get     'set-cookie': [ '__cfduid=dbc2f937a3562c184b832b4d5601a26a71583371801; expires=Sat, 04-Apr-20 01:30:01 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+26 silly get     'cf-ray': '56f011c20849d050-GRU',
+26 silly get     age: '545',
+26 silly get     'cache-control': 'public, max-age=300',
+26 silly get     etag: '"98bf5ad216f2fda83f13c8119f201391"',
+26 silly get     'last-modified': 'Tue, 25 Feb 2020 08:29:15 GMT',
+26 silly get     vary: 'Accept-Encoding',
+26 silly get     'cf-cache-status': 'HIT',
+26 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+26 silly get     server: 'cloudflare' } ]
+27 verbose etag https://registry.npmjs.org/n from cache
+28 verbose get saving n to C:\Users\edson.sensato\AppData\Roaming\npm-cache\registry.npmjs.org\n\.cache.json
+29 silly addNameTag next cb for n with tag latest
+30 silly addNamed n@6.3.1
+31 verbose addNamed "6.3.1" is a plain semver version for n
+32 silly cache afterAdd n@6.3.1
+33 verbose afterAdd C:\Users\edson.sensato\AppData\Roaming\npm-cache\n\6.3.1\package\package.json not in flight; writing
+34 verbose afterAdd C:\Users\edson.sensato\AppData\Roaming\npm-cache\n\6.3.1\package\package.json written
+35 silly install resolved [ { name: 'n',
+35 silly install resolved     description: 'Interactively Manage All Your Node Versions',
+35 silly install resolved     version: '6.3.1',
+35 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+35 silly install resolved     homepage: 'https://github.com/tj/n',
+35 silly install resolved     bugs: { url: 'https://github.com/tj/n/issues' },
+35 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+35 silly install resolved     keywords:
+35 silly install resolved      [ 'nvm',
+35 silly install resolved        'node',
+35 silly install resolved        'version',
+35 silly install resolved        'manager',
+35 silly install resolved        'switcher',
+35 silly install resolved        'node',
+35 silly install resolved        'binary',
+35 silly install resolved        'env' ],
+35 silly install resolved     bin: { n: 'bin/n' },
+35 silly install resolved     repository: { type: 'git', url: 'git://github.com/tj/n.git' },
+35 silly install resolved     scripts: { test: 'test/bin/run-all-tests' },
+35 silly install resolved     devDependencies: { bats: '^1.1.0' },
+35 silly install resolved     preferGlobal: true,
+35 silly install resolved     os: [ '!win32' ],
+35 silly install resolved     engines: { node: '*' },
+35 silly install resolved     license: 'MIT',
+35 silly install resolved     gitHead: 'a0cfc8079126c84125bbd53ad4f62e2406bb8e98',
+35 silly install resolved     _id: 'n@6.3.1',
+35 silly install resolved     _nodeVersion: '12.16.1',
+35 silly install resolved     _npmVersion: '6.13.4',
+35 silly install resolved     dist:
+35 silly install resolved      { integrity: 'sha512-gniLHAuDxduxPuTQD1nOUPFDWevH0VmK3lm3NPDHLakWLAO6j1mlRy3sXsU5hd9jsdbQfatqg39P8KwAUx8fUw==',
+35 silly install resolved        shasum: '119d2df823928e9e983560e1f0da97acacfed35a',
+35 silly install resolved        tarball: 'https://registry.npmjs.org/n/-/n-6.3.1.tgz',
+35 silly install resolved        fileCount: 5,
+35 silly install resolved        unpackedSize: 58128,
+35 silly install resolved        'npm-signature': '-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeVNrXCRA9TVsSAnZWagAA/XgP/1XosoPTKxqzvkeHvLMx\nFXl+W28Po3N67Mfe/vCH3Dx54/v8hI4O2Qa8iY/XxowtF4B7BmYT+CxOPV95\nsCE3vWOhgrs6sQWxFCCI6ITkyZngSsmUg3lflb48rprC1DHdOHXoJn/9tDAz\n7yW+LWr1UDxjeBkMqkpl7FrxbIi5zlF2YZD0FLH5ZUQwy194Tptg1AMoY6Zm\n+RmICvHbrQ/KH5F9/pj/vZQaIPI3vQvwr2znZdEQ+g6qadoD7mag72V6jYAW\nqZtPEhKumc8RXD+3ld54yFbZYNmi6sZbZsQtBNt91tZUR11d/s0+8EvTHVNH\nJ3/+bfmrY/utPzTh+f9Pq1vMfDad30WPIuDCa2+NHetTmwG2cblPwJq77Iw9\n4mrFWPEHxxSMYaK/mm5Z2m849pFSSg3+zqIPPwEXGtjWtqU9WE+304sG4IDA\nLI4TQL30zlWzL0DYdEpI4gMsZVn93PgKTrSSvR3FuTYJAJnYgU15vLnHmEG8\ncx5cFoYao12oXkrHoCHnRj82JJt0yN1SFWBjwHPST6o5/z8Ic3PbyUpHTOkM\nLrSmxy1gQQY71Hq3DxYD7yPQfrOTlu5xE4Q4a9yRjw7bKbE3leuAk75aP7kv\n9dFaBD9kxGzJB9kvJeSIn2KRzsx5bZFFj5lsc42rCeiQrtjisQeFQQGaCXH5\nGmsx\r\n=xqF1\r\n-----END PGP SIGNATURE-----\r\n' },
+35 silly install resolved     maintainers:
+35 silly install resolved      [ [Object],
+35 silly install resolved        [Object],
+35 silly install resolved        [Object],
+35 silly install resolved        [Object],
+35 silly install resolved        [Object],
+35 silly install resolved        [Object],
+35 silly install resolved        [Object] ],
+35 silly install resolved     _npmUser: { name: 'shadowspawn', email: 'npm_j@ruru.gen.nz' },
+35 silly install resolved     directories: {},
+35 silly install resolved     _npmOperationalInternal:
+35 silly install resolved      { host: 's3://npm-registry-packages',
+35 silly install resolved        tmp: 'tmp/n_6.3.1_1582619351420_0.2501631951421419' },
+35 silly install resolved     _hasShrinkwrap: false,
+35 silly install resolved     _shasum: '119d2df823928e9e983560e1f0da97acacfed35a',
+35 silly install resolved     _resolved: 'https://registry.npmjs.org/n/-/n-6.3.1.tgz',
+35 silly install resolved     _from: 'n@latest',
+35 silly install resolved     readme: 'ERROR: No README data found!' } ]
+36 info install n@6.3.1 into C:\Users\edson.sensato\AppData\Roaming\npm
+37 info installOne n@6.3.1
+38 verbose installOne of n to C:\Users\edson.sensato\AppData\Roaming\npm not in flight; installing
+39 verbose lock using C:\Users\edson.sensato\AppData\Roaming\npm-cache\_locks\n-cf3bb6f98c3f7b1f.lock for C:\Users\edson.sensato\AppData\Roaming\npm\node_modules\n
+40 verbose unlock done using C:\Users\edson.sensato\AppData\Roaming\npm-cache\_locks\n-cf3bb6f98c3f7b1f.lock for C:\Users\edson.sensato\AppData\Roaming\npm\node_modules\n
+41 verbose stack Error: Unsupported
+41 verbose stack     at checkPlatform (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-install-checks\index.js:47:14)
+41 verbose stack     at Array.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+41 verbose stack     at LOOP (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+41 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:18:7
+41 verbose stack     at checkEngine (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-install-checks\index.js:26:10)
+41 verbose stack     at Array.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+41 verbose stack     at LOOP (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+41 verbose stack     at chain (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:20:5)
+41 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:1038:5
+41 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\utils\locker.js:39:7
+42 verbose pkgid n@6.3.1
+43 verbose cwd C:\Users\edson.sensato\tokencookie
+44 error Windows_NT 10.0.17763
+45 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "n"
+46 error node v4.2.6
+47 error npm  v2.14.12
+48 error code EBADPLATFORM
+49 error notsup Unsupported
+49 error notsup Not compatible with your operating system or architecture: n@6.3.1
+49 error notsup Valid OS:    !win32
+49 error notsup Valid Arch:  any
+49 error notsup Actual OS:   win32
+49 error notsup Actual Arch: x64
+50 verbose exit [ 1, true ]
