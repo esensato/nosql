@@ -1,12 +1,16 @@
 
 // importacao dos modulos necessarios
 var express = require('express')
-var redis = require('redis')
+var redis = require('redis') // importa driver conexao redis
 var cookie = require('cookie-parser')
+var jwt = require('jsonwebtoken') // geracao de tokens
 
 // instanciar o servidor de aplicacao
 var app = express()
 
+// cria um cliente para o redis
+var cli = redis.createClient()
+	
 // ativa uso de cookies na aplicacao
 app.use(cookie())
 // define que o conteudo estatico sera colocado na pasta public
@@ -34,13 +38,30 @@ app.post('/login', function (req, res){
 	var username = req.body.username // acesso ao conteudo do campo username do form login.html
 	var senha = req.body.senha
 	console.log('Username = ' + username)
-	res.send('ok')
+	
+	// usuario "fake" teste / 123
+	if (username == 'teste' && senha == '123') {
+	
+		// gerar o token
+		var token = jwt.sign({ username }, 'minhachavesecreta')
+		// persiste o token no redis um hash - hset [chave, atributos]
+		cli.hmset([token, 'corfrente', '#', 'corfundo', '#'], function (err, res){
+			console.log(err)
+		})
+		// grava o cookie
+		res.cookie('tokencookie',token)
+		// redireciona para a pagina de configuracao de perfil
+		res.sendFile(__dirname + "/public/perfil.html");
+		
+	} else {
+		res.send('Acesso negado!')
+	}
+	
 })
 
 app.get('/testeredis', function (req, res){
 	
-	// cria um cliente para o redis
-	var cli = redis.createClient()
+
 	cli.set('mensagem', 'Conexao redis ok')
 	
 	res.send('<h1>Teste feito</h1>')
