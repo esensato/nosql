@@ -68,6 +68,18 @@ app.get('/testeredis', function (req, res){
 	
 })
 
+// requisicao para remover o cookie da requisicao
+app.get('/remove', function (req, res){
+
+        // remove o cookie (clear) chamado tokencookie
+ 	res.clearCookie('tokencookie')
+        res.status(200).send('Cookie removido!')
+
+})
+
+// DESAFIO#1 - aceitar requisições POST no contexto /perfil
+
+
 // inicia o servidor na porta 5000
 app.listen(5000, function () {
 	console.log('Servidor atendendo na porta 5000')
