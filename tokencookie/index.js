@@ -1,4 +1,3 @@
-
 // importacao dos modulos necessarios
 var express = require('express')
 var redis = require('redis') // importa driver conexao redis
@@ -17,6 +16,8 @@ app.use(cookie())
 app.use(express.static('public'))
 // ativar a manipulacao de formularios html (form)
 app.use(express.urlencoded({ extended: true }))
+// ativar paginas dinamicas
+app.set('view engine', 'ejs')
 
 // responder a requisicoes do tipo GET
 app.get('/', function (req, res){
@@ -25,7 +26,13 @@ app.get('/', function (req, res){
 	var temCookie = req.cookies.tokencookie
 	
 	if (temCookie) {
-		res.send('<h1>Cookie - SIM!</h1>')		
+
+		// obtem a cor de frente e fundo do redis
+
+		cli.hgetall(temCookie, (err, data) => {
+                        res.render("home", {"corfrente": data.corFrente, "corfundo": data.corFundo});
+                })
+
 	} else {
 		// retorna a pagina de login localizada em .../tokencookie/public/login.html
 		res.sendFile(__dirname + "/public/login.html");
@@ -71,14 +78,28 @@ app.get('/testeredis', function (req, res){
 // requisicao para remover o cookie da requisicao
 app.get('/remove', function (req, res){
 
-        // remove o cookie (clear) chamado tokencookie
+	// remove o cookie (clear) chamado tokencookie
  	res.clearCookie('tokencookie')
-        res.status(200).send('Cookie removido!')
+	res.status(200).send('Cookie removido!')
 
 })
 
 // DESAFIO#1 - aceitar requisições POST no contexto /perfil
+app.post('/perfil', function (req, res) {
 
+	// le os parametros enviados na requisicao
+	var corFrente = req.body.corfrente
+	var corFundo = req.body.corfundo
+	var tokenCookie = req.cookies.tokencookie
+
+	// persistir (atualizar) no redis o hash contendo agora cor de frente e fundo selecionada
+        cli.hmset([tokenCookie, 'corFrente', corFrente, 'corFundo', corFundo], function (err, data){
+            console.log(err)
+	    // redirecionar para a home page para exibir as cores selecionadas
+	    res.render('home', {corfrente: corFrente, corfundo: corFundo})
+        })
+ 
+})
 
 // inicia o servidor na porta 5000
 app.listen(5000, function () {
