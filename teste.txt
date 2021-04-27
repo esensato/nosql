@@ -1,0 +1,52 @@
+const axios = require('axios')
+
+var testeCadastro = () => {
+
+    axios.post('https://7c2bad50.us-south.apigw.appdomain.cloud/api/usuario', {
+    username: "edson",
+    senha: "123",
+    meta: 1000
+    }).then ((resp)=> {
+        console.log(resp.data)
+    }).catch((err) => {
+        console.log(err)
+    })
+
+}
+
+var testeLogin = () => {
+
+    axios.post('https://7c2bad50.us-south.apigw.appdomain.cloud/api/login', {
+    username: "edson",
+    senha: "123"
+    }).then ((resp)=> {
+        console.log(resp.data)
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
+var testeIncluirGasto = () => {
+    axios.post('https://7c2bad50.us-south.apigw.appdomain.cloud/api/gasto', {
+    username: "edson",
+    categoria: "Alimentação",
+    valor: 100
+    }).then ((resp)=> {
+        console.log(resp.data)
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
+
+var testeListarGasto = () => {
+    axios.get('https://7c2bad50.us-south.apigw.appdomain.cloud/api/gasto?username=edson').then ((resp)=> {
+        console.log(resp.data.docs)
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
+//testeIncluirGasto()
+
+testeListarGasto()
